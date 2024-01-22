@@ -1,1 +1,1 @@
-# DIO-BootcampAngular
+# Trilha JS Developer - Pokedex
