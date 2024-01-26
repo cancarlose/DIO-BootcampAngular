@@ -4,17 +4,39 @@ class Cardnews extends HTMLElement{
 
     // criação da shadow DOM
     const shadow = this.attachShadow({ mode: "open" })
-    shadow.innerHTML = "<h1> Hello World</h1>"
+    shadow.appendChild(this.build())
+    shadow.appendChild(this.style())
 
-    build() {
-      
+    // Criação das tags
+    build();{
+      // Class pai, Card
+      const componentRoot = document.createElement("div")
+      componentRoot.setAttribute("class","card")
+
+      // Tag card-left conteúdo
+      const cardLeft = document.createElement("div")
+      cardLeft.setAttribute("class", "card-left")
+
+      const autor = document.createElement("span")
+      const linkTitulo = document.createElement("a")
+      const newsContent = document.createElement("p")
+
+      // Tag card-right imagem
+      const cardRight = document.createElement("div")
+      cardRight.setAttribute("class", "card-right")
+
+      componentRoot.appendChild(cardLeft)
+      componentRoot.appendChild(cardRight)
+
+      return componentRoot
     }
 
-    style () {
+    // Estilização das tags
+    style ();{
 
     }
   }
 }
 
 // Definir o elemento customizado
-customElements.define('card-news', Cardnews)
+customElements.define("card-news", Cardnews)

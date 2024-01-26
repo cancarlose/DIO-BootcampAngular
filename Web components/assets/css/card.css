@@ -26,9 +26,12 @@
   font-weight: 400;
 }
 
-.card-left > h1 {
+.card-left > a {
   margin-top: 15px;
   font-size: 25px;
+  font-weight: 500;
+  color: black;
+  text-decoration: none;
 }
 
 .card-left > p {
