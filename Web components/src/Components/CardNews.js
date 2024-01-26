@@ -1,42 +1,58 @@
-class Cardnews extends HTMLElement{
+class Cardnews extends HTMLElement {
   constructor() {
     super();
 
-    // criação da shadow DOM
-    const shadow = this.attachShadow({ mode: "open" })
-    shadow.appendChild(this.build())
-    shadow.appendChild(this.style())
+    // Criação da Shadow DOM
+    const shadow = this.attachShadow({ mode: "open" });
+    shadow.appendChild(this.build());
+    shadow.appendChild(this.styles());
+  }
 
-    // Criação das tags
-    build();{
-      // Class pai, Card
-      const componentRoot = document.createElement("div")
-      componentRoot.setAttribute("class","card")
+  build() {
+    // Criação da tag pai, Card
+    const componentRoot = document.createElement("div");
+    componentRoot.setAttribute("class", "card");
 
-      // Tag card-left conteúdo
-      const cardLeft = document.createElement("div")
-      cardLeft.setAttribute("class", "card-left")
+    // Criação do Card-left
+    const cardLeft = document.createElement("div");
+    cardLeft.setAttribute("class", "card-left");
 
-      const autor = document.createElement("span")
-      const linkTitulo = document.createElement("a")
-      const newsContent = document.createElement("p")
+    // Criação do Autor da notícia na div card-left
+    const autor = document.createElement("span");
+    autor.textContent = "By " + (this.getAttribute("autor") || "Anonymous");
 
-      // Tag card-right imagem
-      const cardRight = document.createElement("div")
-      cardRight.setAttribute("class", "card-right")
+    // Criação do Título da notícia na div card-left
+    const linkTitle = document.createElement("a");
+    linkTitle.textContent = this.getAttribute("title");
+    linkTitle.href = this.getAttribute("link-url")
 
-      componentRoot.appendChild(cardLeft)
-      componentRoot.appendChild(cardRight)
+    // Criação do Conteúdo da notícia na div card-left
+    const newsContent = document.createElement("p");
+    newsContent.textContent = this.getAttribute("content");
 
-      return componentRoot
-    }
+    // Afiliação dos elementos a div card-left
+    cardLeft.appendChild(autor);
+    cardLeft.appendChild(linkTitle);
+    cardLeft.appendChild(newsContent);
 
-    // Estilização das tags
-    style ();{
+    // Criação da tag Card-right
+    const cardRight = document.createElement("div");
+    cardRight.setAttribute("class", "card-right");
 
-    }
+    // Criação da imagem na div card-right
+    const newsImage = document.createElement("img");
+
+    // Afiliação das div card-left e right, na div pai card
+    componentRoot.appendChild(cardLeft);
+    componentRoot.appendChild(cardRight);
+
+    return componentRoot;
+  }
+
+  styles() {
+
+
   }
 }
 
-// Definir o elemento customizado
-customElements.define("card-news", Cardnews)
+customElements.define("card-news", Cardnews);
