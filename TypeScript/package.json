@@ -2,9 +2,9 @@
   "name": "typescript",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "generics.js",
   "scripts": {
-    "start": "npx tsc && node build/index.js",
+    "start": "npx tsc && node build/generics.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
