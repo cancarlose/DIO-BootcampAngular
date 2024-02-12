@@ -1,0 +1,17 @@
+{
+  "name": "typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "generics.js",
+  "scripts": {
+    "start": "npx tsc && node build/generics.js",
+    "start:dev": "ts-node-dev --respawn --transpile-only src/03-atribute-decorator.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}
