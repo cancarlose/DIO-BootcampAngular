@@ -1,5 +1,6 @@
 <h1>My Application</h1>
-<app-title nome="Produto 1"></app-title>
-<app-title nome="Produto 2"></app-title>
-<app-checked-sample></app-checked-sample>
+<!-- <app-title nome="Produto 1"></app-title>
+<app-title nome="Produto 2"></app-title> -->
+<app-checked-sample *ngIf="isAliveCheckedSample"></app-checked-sample>
+<button (click)="disposeCheckedSample()">Destruir</button>
 <router-outlet></router-outlet>
